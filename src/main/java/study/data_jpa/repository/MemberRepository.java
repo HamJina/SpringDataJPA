@@ -31,7 +31,7 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRsp
     Page<Member> findByAge(int age, Pageable pageable);
 
     //카운트 쿼리 분리
-    @Query(value = "select f from Member m",
+    @Query(value = "select m from Member m",
     countQuery = "select count(m.username) from Member m")
     Page<Member> findMemberAllCountBy(Pageable pageable);
 
